@@ -88,11 +88,11 @@
     @endif
     <div class="content">
         <div class="title">
-            New
+            IE Zamora
         </div>
         <div> @include('includes.messages') </div>
         <div>
-            <p>description</p>
+            <p>Industrial Engineer</p>
         </div>
     </div>
 </div>
