@@ -1,56 +1,52 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>SB Admin - Dashboard</title>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <!-- Bootstrap core CSS-->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <title>{{ config('app.name', 'Laravel') }}</title> -->
+    <title>Food Avenue</title>
 
-    <!-- Custom fonts for this template-->
-    <link href="/css/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- Scripts -->
+     {{--<script src="{{ URL::asset('js/jquery.min.js') }}" defer></script>--}}
+    {{--<script src="{{ URL::asset('js/bootstrap.min.js') }}" defer></script>--}}
+    
+     <script src="/js/jquery.min.js"></script>
+     <script src="/js/popper.min.js"></script>
+     <script src="/js/bootstrap.min.js"></script>
 
-    <!-- Custom styles for this template-->
-    <link href="/css/sb-admin.css" rel="stylesheet">
+    {{-- <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> --}}
+    <script src="{{ URL::asset('js/app.js') }}" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,500,600" rel="stylesheet" type="text/css">
+
+    <!-- Styles -->
+    {{--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">--}}
+    <link href="{{ asset('css/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body id="page-top">
+<body>
 
-    @auth
-        @include('includes.navbar')
-        <div id="wrapper">
-        @include('includes.sidenav')
-    @endauth
-        <div id="content-wrapper">
+    @include('includes.navbar')
 
-        @yield('content')
-
+    <div id="app">
+        <div class="container-fluid">
+            <main class="py-4">
+                @yield('content')
+            </main>
         </div>
-
     </div>
 
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="js/jquery.easing.min.js"></script>
-
-
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin.min.js"></script>
-
-
 </body>
-
 </html>

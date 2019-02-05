@@ -33,10 +33,10 @@
                         <p> <strong>Type</strong>: {{ $user->type }}</p>
                         <p> <strong>Created at</strong>: {{ date('D m-d-Y', strtotime($user->created_at)) }}</p>
                         <p> <strong>Updated at</strong>: {{ date('D m-d-Y', strtotime($user->updated_at)) }}</p>
-                        <a href="{{ action('UsersController@editUser', $user->id) }}" class="btn btn-outline-info float-left mr-2"><i class="fa fa-pencil-alt"></i> Edit</a>
+                        <a href="{{ action('DashboardController@editUser', $user->id) }}" class="btn btn-outline-info float-left mr-2"><i class="fa fa-pencil-alt"></i> Edit</a>
 
                         @if(Auth::user()->username != $user->username)
-                            <form id="delete" method="POST" action="{{ action('UsersController@destroyUser', $user->id) }}" class="float-left">
+                            <form id="delete" method="POST" action="{{ action('DashboardController@destroyUser', $user->id) }}" class="float-left">
                                 <input type="hidden" name="_method" value="DELETE">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <div>

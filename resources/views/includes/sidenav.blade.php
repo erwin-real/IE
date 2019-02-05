@@ -1,53 +1,114 @@
-    <ul class="sidebar navbar-nav">
-        <li class="nav-item active">
-            <a class="nav-link" href="index.html">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Dashboard</span>
-            </a>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-fw fa-folder"></i>
-                <span>Pages</span>
-            </a>
-            <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                <h6 class="dropdown-header">Login Screens:</h6>
-                <a class="dropdown-item" href="login.html">Login</a>
-                <a class="dropdown-item" href="register.html">Register</a>
-                <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
-                <div class="dropdown-divider"></div>
-                <h6 class="dropdown-header">Other Pages:</h6>
-                <a class="dropdown-item" href="404.html">404 Page</a>
-                <a class="dropdown-item" href="blank.html">Blank Page</a>
-            </div>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="charts.html">
-                <i class="fas fa-fw fa-chart-area"></i>
-                <span>Charts</span></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="tables.html">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Tables</span></a>
-        </li>
-    </ul>
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
+{{-- Left Content --}}
+<div class="body-left d-none d-md-none d-lg-block d-xl-block">
+    <div class="sidenav">
+        <ul class="list-group">
+            <li class="text-center username">
+                <div class="circle"></div>
+                {{ Auth::user()->name }}
+            </li>
+            @if(Auth::user()->type == 'admin')
+                <li class="list-group-item {{ request()->is('dashboard') ? 'active' : '' }}">
+                    <a href="/dashboard">
+                        <div class="icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="link">
+                            Dashboard
+                        </div>
+                    </a>
+                    <div class="arrow d-none {{ request()->is('dashboard') ? 'd-md-none d-lg-block d-xl-block' : '' }}"></div>
+                </li>
+            @endif
+            <li class="list-group-item {{ request()->is('products') ? 'active' : '' }} {{ request()->is('products/*') ? 'active' : '' }} {{ request()->is('guide/products') ? 'active' : '' }}">
+                <a href="/products">
+                    <div class="icon">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <div class="link">
+                        Products
+                    </div>
+                </a>
+                <div class="arrow d-none {{ request()->is('products') ? 'd-md-none d-lg-block d-xl-block' : '' }} {{ request()->is('products/*') ? 'd-md-none d-lg-block d-xl-block' : '' }} {{ request()->is('guide/products') ? 'd-md-none d-lg-block d-xl-block' : '' }}"></div>
+            </li>
+            <li class="list-group-item {{ request()->is('transactions') ? 'active' : '' }} {{ request()->is('guide/transactions') ? 'active' : '' }} {{ request()->is('transactions/*') ? 'active' : '' }}">
+                <a href="/transactions">
+                    <div class="icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="link">
+                        Transactions
+                    </div>
+                </a>
+                <div class="arrow d-none {{ request()->is('transactions') ? 'd-md-none d-lg-block d-xl-block' : '' }} {{ request()->is('transactions/*') ? 'd-md-none d-lg-block d-xl-block' : '' }} {{ request()->is('guide/transactions') ? 'd-md-none d-lg-block d-xl-block' : '' }}"></div>
+            </li>
+            <li class="list-group-item {{ request()->is('procurement') ? 'active' : '' }} {{ request()->is('procurement/*') ? 'active' : '' }}">
+                <a href="/procurement">
+                    <div class="icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="link">
+                        Procurement
+                    </div>
+                </a>
+                <div class="arrow d-none {{ request()->is('procurement') ? 'd-md-none d-lg-block d-xl-block' : '' }} {{ request()->is('procurement/*') ? 'd-md-none d-lg-block d-xl-block' : '' }}"></div>
+            </li>
+            <li class="list-group-item {{ request()->is('loss') ? 'active' : '' }} {{ request()->is('loss/*') ? 'active' : '' }} {{ request()->is('guide/loss') ? 'active' : '' }}">
+                <a href="/loss">
+                    <div class="icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="link">
+                        Loss
+                    </div>
+                </a>
+                <div class="arrow d-none {{ request()->is('loss') ? 'd-md-none d-lg-block d-xl-block' : '' }} {{ request()->is('loss/*') ? 'd-md-none d-lg-block d-xl-block' : '' }} {{ request()->is('guide/loss') ? 'd-md-none d-lg-block d-xl-block' : '' }}"></div>
+            </li>
+            @if(Auth::user()->type == 'admin')
+                <li class="list-group-item {{ request()->is('reports') ? 'active' : '' }}">
+                    <a href="/reports">
+                        <div class="icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="link">
+                            Reports
+                        </div>
+                    </a>
+                    <div class="arrow d-none {{ request()->is('reports') ? 'd-md-none d-lg-block d-xl-block' : '' }}"></div>
+                </li>
+
+                <li class="list-group-item {{ request()->is('users') ? 'active' : '' }} {{ request()->is('users/*') ? 'active' : '' }} {{ request()->is('guide/users') ? 'active' : '' }}">
+                    <a href="/users">
+                        <div class="icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="link">
+                            Users
+                        </div>
+                    </a>
+                    <div class="arrow d-none {{ request()->is('users') ? 'd-md-none d-lg-block d-xl-block' : '' }} {{ request()->is('users/*') ? 'd-md-none d-lg-block d-xl-block' : '' }} {{ request()->is('guide/users') ? 'd-md-none d-lg-block d-xl-block' : '' }}"></div>
+                </li>
+            @endif
+            @guest
+                <li class="list-group-item"><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
+                <li class="list-group-item"><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
+            @else
+                <li class="list-group-item bot-logout">
+                    <a class="nav-link" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                        <div class="icon logout">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </div>
+                        <div class="link">
+                            {{ __('Logout') }}
+                        </div>
+                    </a>
+                </li>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                </form>
+            @endguest
+        </ul>
     </div>
+</div>

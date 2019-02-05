@@ -27,7 +27,7 @@
 
                     <div class="card-body">
 
-                        <form action="{{ action('UsersController@updateUser', $user->id) }}" method="POST">
+                        <form action="{{ action('DashboardController@updateUser', $user->id) }}" method="POST">
                             <input type="hidden" name="_method" value="PUT">
                             @csrf
 
