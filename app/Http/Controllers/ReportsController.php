@@ -16,7 +16,27 @@ class ReportsController extends Controller
     private $format;
 
     public function __construct() { $this->middleware('auth'); }
-    
+
+    public function test() {
+        if ($this->isUserType('admin')) {
+
+//            $chart = new MyChart;
+//            $chart->labels($data['dates']);
+//            $chart->dataset('Total', 'line', $data['totals'])->options(['color' => '#3490dc']);
+//            $chart->dataset('Capital', 'line', $data['capitals'])->options(['color' => '#6c757d']);
+//            $chart->dataset('Income', 'line', $data['incomes'])->options(['color' => '#38c172']);
+//
+//            return view('pages.reports')
+//                ->with('chart', $chart)
+//                ->with('transactions', Transaction::all())
+//                ->with('losses', Loss::all())
+//                ->with('type', $type);
+            return view('pages.test');
+        }
+
+        return redirect('/')->with('error', 'You don\'t have the privilege');
+    }
+
     public function index(Request $request) {
         if ($this->isUserType('admin')) {
             $type = ($request->input('type')) ? $request->input('type') : 'daily';

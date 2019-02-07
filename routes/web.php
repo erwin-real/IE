@@ -66,6 +66,8 @@ Route::get('/transactions/get', 'TransactionsController@get')->name('transaction
 Route::get('/transactions/success', 'TransactionsController@success');
 Route::get('/transactions/export/{id}', 'TransactionsController@export');
 
+Route::get('/test', 'ReportsController@test');
+
 Route::get('/loss/create/{product_id}', 'LossController@create');
 
 Route::resource('products', 'ProductsController');
