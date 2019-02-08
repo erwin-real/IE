@@ -32,11 +32,6 @@
                 </div>
 
                 <div class="form-group col-12 col-md-5 col-sm-8">
-                    {{Form::label('type', 'Product Type')}} <span class="text-danger">*</span>
-                    {{Form::text('type', '', ['class' => 'form-control', 'placeholder' => 'Enter Product Type', 'required' => 'required'])}}
-                </div>
-
-                <div class="form-group col-12 col-md-5 col-sm-8">
                     {{Form::label('desc', 'Product Description')}}
                     {{Form::text('desc', '', ['class' => 'form-control', 'placeholder' => 'Enter Product Description'])}}
                 </div>
@@ -52,11 +47,6 @@
                 </div>
 
                 <div class="form-group col-12 col-md-5 col-sm-8">
-                    {{Form::label('sold_by', 'Sold Per')}} <span class="text-danger">*</span>
-                    {{Form::text('sold_by', '', ['class' => 'form-control', 'placeholder' => 'Piece, Pack, Kilogram, etc...'])}}
-                </div>
-
-                <div class="form-group col-12 col-md-5 col-sm-8">
                     {{Form::label('src', 'Source of Supply')}}
                     {{Form::text('src', '', ['class' => 'form-control', 'placeholder' => 'Enter Product\'s Source of Supply'])}}
                 </div>
@@ -67,19 +57,8 @@
                 </div>
 
                 <div class="form-group col-12 col-md-5 col-sm-8">
-                    {{Form::label('exp', 'Expiration Date')}}
-                    {{Form::date('exp', '', ['class' => 'form-control', 'placeholder' => 'Enter Expiration Date'])}}
-                </div>
-
-                <div class="form-group col-12 col-md-5 col-sm-8">
                     {{Form::label('stocks', 'Stocks')}} <span class="text-danger">*</span>
                     {{Form::number('stocks', '', ['class' => 'form-control', 'placeholder' => 'Enter No. of Stocks', 'required' => 'required'])}}
-                </div>
-
-                <div class="form-group col-12 col-md-5 col-sm-8">
-                    {{Form::label('pro', 'Procurement Level')}} <span class="text-danger">*</span>
-                    {{Form::number('pro', '', ['class' => 'form-control', 'placeholder' => 'Enter Procurement Level', 'required' => 'required'])}}
-
                 </div>
 
                 <div class="form-group col-12 col-md-5 col-sm-8">

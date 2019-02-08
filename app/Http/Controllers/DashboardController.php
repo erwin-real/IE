@@ -28,7 +28,6 @@ class DashboardController extends Controller
         if ($this->isUserType('admin')) {
             return view('dashboard')
                 ->with('transactions', Transaction::all())
-                ->with('procurements', Product::orderBy('updated_at','desc')->whereRaw('products.stocks <= products.procurement')->get())
                 ->with('chart', $this->createChart());
         }
         return redirect('/')->with('error', 'You don\'t have the privilege');

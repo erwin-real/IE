@@ -41,7 +41,6 @@
             @foreach($transaction->singleTransactions as $singleTransaction)
                 <tr>
                     <td>{{ $singleTransaction->name }}</td>
-                    <td>{{ $singleTransaction->type }}</td>
                     <td>{{ $singleTransaction->desc}}</td>
                     <td>{{ $singleTransaction->quantity}}</td>
                     <td>{{ $singleTransaction->orig_srp}}</td>

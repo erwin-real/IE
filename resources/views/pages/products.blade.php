@@ -37,7 +37,6 @@
                     <thead>
                         <tr>
                             <th scope="col">@sortablelink('name', 'Name',[],['style' => 'text-decoration: none;', 'rel' => 'nofollow'])</th>
-                            <th scope="col">@sortablelink('type', 'Type',[],['style' => 'text-decoration: none;', 'rel' => 'nofollow'])</th>
                             <th scope="col">@sortablelink('desc', 'Description',[],['style' => 'text-decoration: none;', 'rel' => 'nofollow'])</th>
 
                             @if(Auth::user()->type == 'admin')
@@ -45,11 +44,8 @@
                             @endif
 
                             <th scope="col">@sortablelink('srp', 'SRP',[],['style' => 'text-decoration: none;', 'rel' => 'nofollow'])</th>
-                            <th scope="col">@sortablelink('sold_by', 'Sold per',[],['style' => 'text-decoration: none;', 'rel' => 'nofollow'])</th>
                             <th scope="col">@sortablelink('source', 'Source',[],['style' => 'text-decoration: none;', 'rel' => 'nofollow'])</th>
-                            <th scope="col">@sortablelink('expired_at', 'Expiration Date',[],['style' => 'text-decoration: none;', 'rel' => 'nofollow'])</th>
                             <th scope="col">@sortablelink('stocks', 'Stocks',[],['style' => 'text-decoration: none;', 'rel' => 'nofollow'])</th>
-                            <th scope="col">@sortablelink('procurement', 'Procurement',[],['style' => 'text-decoration: none;', 'rel' => 'nofollow'])</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -57,7 +53,6 @@
                             @foreach($products as $product)
                                 <tr>
                                     <td><a href="/products/{{$product->id}}">{{$product->name}}</a></td>
-                                    <td>{{$product->type}}</td>
                                     <td>{{$product->desc}}</td>
 
                                     @if(Auth::user()->type == 'admin')
@@ -65,20 +60,13 @@
                                     @endif
 
                                     <td>{{$product->srp}}</td>
-                                    <td>{{$product->sold_by}}</td>
                                     <td>{{$product->source}}</td>
-                                    @if($product->expired_at != null)
-                                        <td>{{date('D M d,Y', strtotime($product->expired_at))}}</td>
-                                    @else
-                                        <td></td>
-                                    @endif
                                     <td>{{$product->stocks}}</td>
-                                    <td>{{$product->procurement}}</td>
                                 </tr>
                             @endforeach
                         @else
                         <tr class="text-center">
-                            <th colspan="10">No products found</th>
+                            <th colspan="6">No products found</th>
                         </tr>
                         @endif
                     </tbody>

@@ -7,7 +7,6 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Charts\MyChart;
 use App\Transaction;
-use App\Loss;
 //use DB;
 
 class ReportsController extends Controller
@@ -51,7 +50,6 @@ class ReportsController extends Controller
             return view('pages.reports')
                 ->with('chart', $chart)
                 ->with('transactions', Transaction::all())
-                ->with('losses', Loss::all())
                 ->with('type', $type);
         }
 

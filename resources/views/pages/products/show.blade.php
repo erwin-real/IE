@@ -40,18 +40,14 @@
             <div class="row">
                 <div class="col-sm-12 col-md-4 mt-4 panel-body">
                     <p><b>Name</b>: {{$product->name}}</p>
-                    <p><b>Type</b>: {{$product->type}}</p>
                     <p><b>Desc</b>: {{$product->desc}}</p>
                     @if(Auth::user()->type == 'admin')
                         <p><b>Price</b>: {{$product->price}}</p>
                     @endif
                     <p><b>SRP</b>: {{$product->srp}}</p>
-                    <p><b>Sold by</b>: {{$product->sold_by}}</p>
                     <p><b>Source</b>: {{$product->source}}</p>
                     <p><b>Contact</b>: {{$product->contact}}</p>
-                    <p><b>Expiration Date</b>: {{date('D M d,Y', strtotime($product->expired_at))}}</p>
                     <p><b>Stocks</b>: {{$product->stocks}}</p>
-                    <p><b>Procurement</b>: {{$product->procurement}}</p>
                     <p><b>Created at</b>: {{date('D M d,Y', strtotime($product->created_at))}}</p>
                     <p><b>Updated at</b>: {{date('D M d,Y', strtotime($product->updated_at))}}</p>
                 </div>

@@ -54,28 +54,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-6 col-sm-4 col-xl-2">
-                        <div class="campaign-summary" onclick="window.location='/loss'" style="cursor: pointer;">
-                            <div class="card orange mb-3">
-                                <div class="card-body text-center">
-                                    <h2>{{$losses->sum('quantity')}}</h2>
-                                    <p>Loss Products</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-sm-4 col-xl-2">
-                        <div class="campaign-summary" onclick="window.location='/loss'" style="cursor: pointer;">
-                            <div class="card bg-danger mb-3">
-                                <div class="card-body text-center">
-                                    <h2>{{$losses->sum('loss_money')}}</h2>
-                                    <p>Total Loss Money</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
 

@@ -78,7 +78,6 @@ class TransactionsController extends Controller
 
                 $product = Product::find($singleTransaction->product_id);
                 $singleTransaction->name = $product->name;
-                $singleTransaction->type = $product->type;
                 $singleTransaction->desc = $product->desc . " | " . $product->sold_by;
                 $singleTransaction->save();
                 $product->stocks -= $singleTransaction->quantity;

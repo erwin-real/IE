@@ -19,7 +19,6 @@ Route::get('/reports', 'ReportsController@index');
 // Guides
 Route::get('/guide/products', 'GuideController@products');
 Route::get('/guide/transactions', 'GuideController@transactions');
-Route::get('/guide/loss', 'GuideController@loss');
 Route::get('/guide/users', 'GuideController@users');
 
 //Auth::routes();
@@ -58,21 +57,13 @@ Route::get('/products/import', 'ProductsController@import');
 Route::post('/products/uploadFile', 'ProductsController@uploadCSVFile');
 Route::get('/products/search', 'ProductsController@search');
 
-Route::get('/procurement', 'ProductsController@procurement');
-Route::get('/procurement/track', 'ProductsController@track');
-Route::delete('/procurement/track/{id}','ProductsController@destroyTrack');
-
 Route::get('/transactions/get', 'TransactionsController@get')->name('transactions.get');
 Route::get('/transactions/success', 'TransactionsController@success');
 Route::get('/transactions/export/{id}', 'TransactionsController@export');
 
 Route::get('/test', 'ReportsController@test');
 
-Route::get('/loss/create/{product_id}', 'LossController@create');
-
 Route::resource('products', 'ProductsController');
-
-Route::resource('loss', 'LossController')->except(['create']);
 
 Route::resource('transactions', 'TransactionsController')->except([
     'edit', 'update'

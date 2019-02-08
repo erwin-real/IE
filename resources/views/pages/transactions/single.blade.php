@@ -45,7 +45,6 @@
                     <thead>
                         <tr>
                             <th scope="col">Product Name</th>
-                            <th scope="col">Type</th>
                             <th scope="col">Description | Sold Per</th>
 
                             @if(Auth::user()->type == 'admin')
@@ -61,7 +60,6 @@
                         @foreach($transaction->singleTransactions as $singleTransaction)
                             <tr>
                                 <td>{{$singleTransaction->name}}</td>
-                                <td>{{$singleTransaction->type}}</td>
                                 <td>{{$singleTransaction->desc}}</td>
 
                                 @if(Auth::user()->type == 'admin')

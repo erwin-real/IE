@@ -21,17 +21,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                     </li>
-                    {{--<li class="nav-item">--}}
-                        {{--<a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>--}}
-                    {{--</li>--}}
                 @else
                     @if(Auth::user()->type == 'admin')
                         <li class="nav-tem"><a class="nav-link" href="/dashboard">Dashboard</a></li>
                     @endif
                     <li class="nav-tem"><a class="nav-link" href="/products">Products</a></li>
                     <li class="nav-tem"><a class="nav-link" href="/transactions">Transactions</a></li>
-                    <li class="nav-tem"><a class="nav-link" href="/procurement">Procurement</a></li>
-                    <li class="nav-tem"><a class="nav-link" href="/loss">Loss</a></li>
                     @if(Auth::user()->type == 'admin')
                         <li class="nav-tem"><a class="nav-link" href="/reports">Reports</a></li>
                         <li class="nav-tem"><a class="nav-link" href="/users">Users</a></li>
@@ -53,18 +48,6 @@
                             </form>
                         </div>
                     </li>
-                    {{-- <li class="nav-item">
-                        <a class="nav-link" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                          document.getElementById('logout-form').submit();">
-                             {{ __('Logout') }}
-                         </a>
-
-                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                             @csrf
-                         </form>
-
-                    </li> --}}
                 @endguest
             </ul>
         </div>

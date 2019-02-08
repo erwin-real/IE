@@ -42,28 +42,6 @@
                 </a>
                 <div class="arrow d-none {{ request()->is('transactions') ? 'd-md-none d-lg-block d-xl-block' : '' }} {{ request()->is('transactions/*') ? 'd-md-none d-lg-block d-xl-block' : '' }} {{ request()->is('guide/transactions') ? 'd-md-none d-lg-block d-xl-block' : '' }}"></div>
             </li>
-            <li class="list-group-item {{ request()->is('procurement') ? 'active' : '' }} {{ request()->is('procurement/*') ? 'active' : '' }}">
-                <a href="/procurement">
-                    <div class="icon">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <div class="link">
-                        Procurement
-                    </div>
-                </a>
-                <div class="arrow d-none {{ request()->is('procurement') ? 'd-md-none d-lg-block d-xl-block' : '' }} {{ request()->is('procurement/*') ? 'd-md-none d-lg-block d-xl-block' : '' }}"></div>
-            </li>
-            <li class="list-group-item {{ request()->is('loss') ? 'active' : '' }} {{ request()->is('loss/*') ? 'active' : '' }} {{ request()->is('guide/loss') ? 'active' : '' }}">
-                <a href="/loss">
-                    <div class="icon">
-                        <i class="fas fa-exclamation-triangle"></i>
-                    </div>
-                    <div class="link">
-                        Loss
-                    </div>
-                </a>
-                <div class="arrow d-none {{ request()->is('loss') ? 'd-md-none d-lg-block d-xl-block' : '' }} {{ request()->is('loss/*') ? 'd-md-none d-lg-block d-xl-block' : '' }} {{ request()->is('guide/loss') ? 'd-md-none d-lg-block d-xl-block' : '' }}"></div>
-            </li>
             @if(Auth::user()->type == 'admin')
                 <li class="list-group-item {{ request()->is('reports') ? 'active' : '' }}">
                     <a href="/reports">

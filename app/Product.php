@@ -10,19 +10,15 @@ class Product extends Model
     use Sortable;
 
     protected $fillable = [
-        'name', 'type', 'desc', 
+        'name', 'desc',
         'price', 'srp', 'source', 
-        'contact', 'expired_at', 
-        'stocks', 'procurement',
-        'sold_by'
+        'contact', 'stocks'
     ];
 
     public $sortable = [
-        'name', 'type', 'desc', 
+        'name', 'desc',
         'price', 'srp', 'source',
-        'contact', 'expired_at', 'stocks', 
-        'procurement', 'created_at', 'updated_at',
-        'sold_by'
+        'contact', 'stocks', 'created_at', 'updated_at',
     ];
     
     // Table Name
@@ -33,8 +29,5 @@ class Product extends Model
 
     // Timestamps
     public $timestamps = true;
-
-    public function losses() { return $this->hasMany('App\Loss'); }
-    public function tracks() { return $this->hasMany('App\Track'); }
     
 }

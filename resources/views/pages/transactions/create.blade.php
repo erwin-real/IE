@@ -36,7 +36,6 @@
                                                 <th scope="col">Description</th>
                                                 <th scope="col">Stocks</th>
                                                 <th scope="col">Price</th>
-                                                <th scope="col">Sold per</th>
                                                 <th scope="col">Quantity</th>
                                                 <th scope="col">Total</th>
                                             </tr>
@@ -75,7 +74,6 @@
                                             <th scope="col">Name</th>
                                             <th scope="col">Description</th>
                                             <th scope="col">Price</th>
-                                            <th scope="col">Sold per</th>
                                             <th scope="col">Stocks Remaining</th>
                                         </tr>
                                     </thead>
@@ -195,7 +193,7 @@
 
         });
 
-        function addTransaction(id, name, desc, sold_by, srp, stocks) {
+        function addTransaction(id, name, desc, srp, stocks) {
             for (var a = 0; a < addedProducts.length; a++)
                 if (addedProducts[a] == id) return null;
 
@@ -228,11 +226,6 @@
             td = document.createElement("td");
             var node_srp = document.createTextNode(srp);
             td.appendChild(node_srp);
-            tr.appendChild(td);
-
-            td = document.createElement("td");
-            var node_sold_by = document.createTextNode(sold_by);
-            td.appendChild(node_sold_by);
             tr.appendChild(td);
 
             td = document.createElement("td");
