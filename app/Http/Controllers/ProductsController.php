@@ -197,7 +197,7 @@ class ProductsController extends Controller
                         ->get();
             } else {
                 $data = DB::table('products')
-                        ->orderBy('expired_at', 'desc')
+                        ->orderBy('updated_at', 'desc')
                         ->get();
             }
             $total_row = $data->count();

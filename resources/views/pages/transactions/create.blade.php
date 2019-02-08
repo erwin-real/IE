@@ -37,6 +37,7 @@
                                                 <th scope="col">Stocks</th>
                                                 <th scope="col">Price</th>
                                                 <th scope="col">Quantity</th>
+                                                <th scope="col">Discount</th>
                                                 <th scope="col">Total</th>
                                             </tr>
                                         </thead>
@@ -138,8 +139,9 @@
                         for (var i = 0; i < tBodyChildren.length; i++) {
                             transactions[i] = {
                                 'product_id': tBodyChildren[i].children[7].children[0].value,
-                                'quantity': tBodyChildren[i].children[5].children[0].value,
-                                'subtotal': tBodyChildren[i].children[6].innerText
+                                'quantity': tBodyChildren[i].children[4].children[0].value,
+                                'subtotal': tBodyChildren[i].children[6].innerText,
+                                'discount': tBodyChildren[i].children[5].children[0].value
                             };
                         }
 
@@ -232,10 +234,21 @@
             var node_quantity = document.createElement("input");
             node_quantity.type = 'number';
             node_quantity.name = 'quantity';
-            node_quantity.style = 'width: 50%';
+            node_quantity.style = 'width: 80px';
             node_quantity.setAttribute("onkeypress","checkStocks(this, event, "+ stocks +")");
             node_quantity.setAttribute("onkeyup","updateSubtotal(this, " + stocks + ")");
             td.appendChild(node_quantity);
+            tr.appendChild(td);
+
+            td = document.createElement("td");
+            var node_discount = document.createElement("input");
+            node_discount.type = 'number';
+            node_discount.name = 'discount';
+            node_discount.value = 0;
+            node_discount.style = 'width: 80px';
+            // node_discount.setAttribute("onkeypress","checkStocks(this, event, "+ stocks +")");
+            node_discount.setAttribute("onkeyup","updateSubtotalNew(this)");
+            td.appendChild(node_discount);
             tr.appendChild(td);
 
             td = document.createElement("td");
@@ -280,8 +293,19 @@
             var temp = 0;
             var node = r.parentNode.parentNode.children;
             var price = node[3].innerText;
-            var quantity = node[5].children[0].value;
-            node[6].innerText = price * quantity;
+            var quantity = node[4].children[0].value;
+            var discount = node[5].children[0].value;
+            node[6].innerText = (price * quantity) - discount;
+            setTotal();
+        }
+
+        function updateSubtotalNew(r) {
+            var temp = 0;
+            var node = r.parentNode.parentNode.children;
+            var price = node[3].innerText;
+            var quantity = node[4].children[0].value;
+            var discount = node[5].children[0].value;
+            node[6].innerText = (price * quantity) - discount;
             setTotal();
         }
 

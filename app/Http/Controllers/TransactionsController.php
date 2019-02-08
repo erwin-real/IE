@@ -70,6 +70,7 @@ class TransactionsController extends Controller
                 $singleTransaction->transaction_id = $transaction->id;
                 $singleTransaction->product_id = $transac['product_id'];
                 $singleTransaction->quantity = $transac['quantity'];
+                $singleTransaction->discount = $transac['discount'];
                 $singleTransaction->total = $transac['subtotal'];
                 $singleTransaction->capital = $transac['quantity'] * $singleTransaction->product->price;
                 $singleTransaction->income = $transac['subtotal'] - $singleTransaction->capital;
@@ -78,7 +79,7 @@ class TransactionsController extends Controller
 
                 $product = Product::find($singleTransaction->product_id);
                 $singleTransaction->name = $product->name;
-                $singleTransaction->desc = $product->desc . " | " . $product->sold_by;
+                $singleTransaction->desc = $product->desc;
                 $singleTransaction->save();
                 $product->stocks -= $singleTransaction->quantity;
                 $product->save();

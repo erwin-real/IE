@@ -45,7 +45,7 @@
                     <thead>
                         <tr>
                             <th scope="col">Product Name</th>
-                            <th scope="col">Description | Sold Per</th>
+                            <th scope="col">Description</th>
 
                             @if(Auth::user()->type == 'admin')
                                 <th scope="col">Price</th>
@@ -54,6 +54,8 @@
                             <th scope="col">SRP</th>
                             <th scope="col">Quantity</th>
                             <th scope="col">Subtotal</th>
+                            <th scope="col">Discount</th>
+                            <th scope="col">Subtotal - Discount</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -68,6 +70,8 @@
 
                                 <td>{{$singleTransaction->orig_srp}}</td>
                                 <td>{{$singleTransaction->quantity}}</td>
+                                <td>{{$singleTransaction->quantity * $singleTransaction->orig_srp}}</td>
+                                <td>{{$singleTransaction->discount}}</td>
                                 <td>{{$singleTransaction->total}}</td>
                             </tr>
                         @endforeach

@@ -22,18 +22,7 @@
             <div class="top-dashboard">
                 <div class="row">
 
-                    <div class="col-6 col-sm-6 col-xl-3">
-                        <div class="campaign-summary">
-                            <div class="card bg-secondary mb-3">
-                                <div class="card-body text-center">
-                                    <h2>{{$transactions->sum('capital')}}</h2>
-                                    <p>Capital</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-sm-6 col-xl-3">
+                    <div class="col-12 col-sm-12 col-xl-4">
                         <div class="campaign-summary">
                             <div class="card bg-success mb-3">
                                 <div class="card-body text-center">
@@ -44,7 +33,18 @@
                         </div>
                     </div>
 
-                    <div class="col-6 col-sm-4 col-xl-2">
+                    <div class="col-6 col-sm-6 col-xl-4">
+                        <div class="campaign-summary">
+                            <div class="card bg-secondary mb-3">
+                                <div class="card-body text-center">
+                                    <h2>{{$transactions->sum('capital')}}</h2>
+                                    <p>Capital</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-6 col-xl-4">
                         <div class="campaign-summary" onclick="window.location='/transactions'" style="cursor: pointer;">
                             <div class="card bg-info mb-3">
                                 <div class="card-body text-center">

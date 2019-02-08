@@ -20,6 +20,7 @@ class CreateSingleTransactionsTable extends Migration
             $table->string('name');
             $table->string('desc')->nullable();
             $table->unsignedInteger('quantity');
+            $table->double('discount',15,4);
             $table->double('orig_price', 15, 4);
             $table->double('orig_srp', 15, 4);
             $table->double('total', 15, 4);

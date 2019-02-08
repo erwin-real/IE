@@ -36,6 +36,10 @@ class ReportsController extends Controller
         return redirect('/')->with('error', 'You don\'t have the privilege');
     }
 
+    public function calculate(Request $request) {
+        dd($request);
+    }
+
     public function index(Request $request) {
         if ($this->isUserType('admin')) {
             $type = ($request->input('type')) ? $request->input('type') : 'daily';

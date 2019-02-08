@@ -15,6 +15,8 @@ Route::get('/', function () { return view('welcome'); });
 Route::get('/dashboard', 'DashboardController@index');
 
 Route::get('/reports', 'ReportsController@index');
+Route::get('/test', 'ReportsController@test');
+Route::post('/test', 'ReportsController@calculate');
 
 // Guides
 Route::get('/guide/products', 'GuideController@products');
@@ -60,8 +62,6 @@ Route::get('/products/search', 'ProductsController@search');
 Route::get('/transactions/get', 'TransactionsController@get')->name('transactions.get');
 Route::get('/transactions/success', 'TransactionsController@success');
 Route::get('/transactions/export/{id}', 'TransactionsController@export');
-
-Route::get('/test', 'ReportsController@test');
 
 Route::resource('products', 'ProductsController');
 
