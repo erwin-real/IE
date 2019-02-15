@@ -15,8 +15,8 @@ Route::get('/', function () { return view('welcome'); });
 Route::get('/dashboard', 'DashboardController@index');
 
 Route::get('/reports', 'ReportsController@index');
-Route::get('/test', 'ReportsController@test');
-Route::post('/test', 'ReportsController@calculate');
+Route::get('/reports/forecast', 'ReportsController@forecast');
+Route::post('/reports/forecast', 'ReportsController@calculate');
 
 // Guides
 Route::get('/guide/products', 'GuideController@products');

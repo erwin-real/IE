@@ -62,7 +62,7 @@
                 <a href="/reports?type=weekly" class="btn btn-outline-primary">Weekly</a>
                 <a href="/reports?type=monthly" class="btn btn-outline-primary">Monthly</a>
                 <a href="/reports?type=yearly" class="btn btn-outline-primary">Yearly</a>
-                <a href="/test" class="btn btn-outline-primary">Calculate</a>
+                <a href="/reports/forecast" class="btn btn-outline-primary">Forecast</a>
             </div>
 
             <div class="bottom-dashboard">
@@ -84,7 +84,7 @@
 
 <script src="/js/vue.js"></script>
 <script src="/js/echarts-en.min.js"></script>
-{!! $chart->script() !!}
+    {!! $chart->script() !!}
 
 <script src="/js/highcharts.js"></script>
 @endsection

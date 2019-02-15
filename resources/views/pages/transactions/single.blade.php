@@ -81,7 +81,7 @@
                 </table>
             </div>
             <div class="w-100 text-center">
-                <a href="/transactions/export/{{$transaction->id}}" target="_blank" class="btn btn-outline-success"><i class="fa fa-file-invoice"></i> EXPORT</a>
+{{--                <a href="/transactions/export/{{$transaction->id}}" target="_blank" class="btn btn-outline-success"><i class="fa fa-file-invoice"></i> EXPORT</a>--}}
             </div>
 
             <a href="/transactions" class="btn btn-outline-primary mb-3 mx-2"><i class="fas fa-chevron-left"></i> Back</a>

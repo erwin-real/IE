@@ -6,7 +6,7 @@
     {{-- Right Content --}}
     <div class="body-right">
         <div class="container-fluid">
-            <h1>Users</h1>
+            <h1>Create User</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item" aria-current="page">
@@ -15,7 +15,7 @@
                     <li class="breadcrumb-item" aria-current="page">
                         <a href="/users">Users</a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">Create</li>
+                    <li class="breadcrumb-item active" aria-current="page">Create User</li>
                 </ol>
             </nav>
 
