@@ -33,13 +33,6 @@ class GuideController extends Controller
         return redirect('/')->with('error', 'You don\'t have the privilege');
     }
 
-    public function loss() {
-        if ($this->isUserType('admin') || $this->isUserType('seller'))
-            return view('pages.guides.loss');
-
-        return redirect('/')->with('error', 'You don\'t have the privilege');
-    }
-
     public function users() {
         if ($this->isUserType('admin'))
             return view('pages.guides.users');

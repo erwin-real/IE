@@ -24,10 +24,6 @@
             <div class="button-holder text-right">
                 <a href="/products/{{$product->id}}/edit" class="btn btn-outline-primary mt-1"><i class="fas fa-pencil-alt"></i> Edit</a>
 
-                @if($product->stocks != 0)
-                    <a href="/loss/create/{{$product->id}}" class="btn btn-outline-secondary mt-1"><i class="fas fa-exclamation-triangle"></i> Loss</a>
-                @endif
-
                 @if(Auth::user()->type == 'admin')
                     <form id="delete" method="POST" action="{{ action('ProductsController@destroy', $product->id) }}" class="float-right mt-1 ml-1">
                         <input type="hidden" name="_method" value="DELETE">

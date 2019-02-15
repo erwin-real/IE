@@ -62,6 +62,7 @@
                 <a href="/reports?type=weekly" class="btn btn-outline-primary">Weekly</a>
                 <a href="/reports?type=monthly" class="btn btn-outline-primary">Monthly</a>
                 <a href="/reports?type=yearly" class="btn btn-outline-primary">Yearly</a>
+                <a href="/test" class="btn btn-outline-primary">Calculate</a>
             </div>
 
             <div class="bottom-dashboard">

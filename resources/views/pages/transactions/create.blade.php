@@ -24,7 +24,7 @@
 
             <div class="bottom-dashboard">
                 <div class="row">
-                    <div class="col-12 col-xl-6">
+                    <div class="col-12 col-xl-7">
                         <div class="card mb-2">
                             <h5 class="card-title lists-title">Transaction Summary</h5>
                             <!-- <div class="card-body text-center h-100 d-table"> -->
@@ -60,7 +60,7 @@
                         </div>
                     </div>
 
-                    <div class="col-12 col-xl-6 mt-xl-0 mt-4">
+                    <div class="col-12 col-xl-5 mt-xl-0 mt-4">
                         <div class="card mb-2">
                             <h5 class="card-title report-title">Products</h5>
                             <div class="form-group mt-4" align="center">

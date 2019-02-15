@@ -176,8 +176,6 @@ class ProductsController extends Controller
             if ($product->cover_image != 'noimage.jpg')
                 Storage::delete('public/cover_images/'.$product->cover_image);
 
-            foreach ($product->losses as $loss) $loss->delete();
-
             $product->delete();
             return redirect('/products')->with('success', 'Product Deleted');
         }

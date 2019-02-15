@@ -17,27 +17,57 @@ class ReportsController extends Controller
     public function __construct() { $this->middleware('auth'); }
 
     public function test() {
-        if ($this->isUserType('admin')) {
-
-//            $chart = new MyChart;
-//            $chart->labels($data['dates']);
-//            $chart->dataset('Total', 'line', $data['totals'])->options(['color' => '#3490dc']);
-//            $chart->dataset('Capital', 'line', $data['capitals'])->options(['color' => '#6c757d']);
-//            $chart->dataset('Income', 'line', $data['incomes'])->options(['color' => '#38c172']);
-//
-//            return view('pages.reports')
-//                ->with('chart', $chart)
-//                ->with('transactions', Transaction::all())
-//                ->with('losses', Loss::all())
-//                ->with('type', $type);
-            return view('pages.test');
-        }
+        if ($this->isUserType('admin'))
+            return view('pages.reports.test');
 
         return redirect('/')->with('error', 'You don\'t have the privilege');
     }
 
     public function calculate(Request $request) {
-        dd($request);
+            $year = $request->input('year') + 2;
+            $dates = [
+                'Jan '.$year, 'Feb '.$year, 'Mar '.$year,
+                'Apr '.$year, 'May '.$year, 'Jun '.$year,
+                'Jul '.$year, 'Aug '.$year, 'Sept '.$year,
+                'Oct '.$year, 'Nov '.$year, 'Dec '.$year
+            ];
+
+            $size4Raw = $request->input('size4');
+            $size5Raw = $request->input('size5');
+
+//            $average4 = 0;
+//            for ($i = 3; $i < 15; $i++) $average4 += $size4Raw[$i];
+
+            $size4MAF = collect();
+            $size5MAF = collect();
+            $size4ESF = collect();
+//            $size4SF = collect();
+            for ($i = 0; $i < 12; $i++) {
+                $size4MAF->push(($size4Raw[$i] + $size4Raw[$i+1] + $size4Raw[$i+2]) / 3);
+                $size5MAF->push(($size5Raw[$i] + $size5Raw[$i+1] + $size5Raw[$i+2]) / 3);
+                if ($i == 0) $size4ESF->push($size4Raw[$i+3] + 0);
+                else $size4ESF->push(ceil((0.2*$size4Raw[$i+3]) + (0.8*$size4ESF[$i-1])));
+//                $size4SF->push(ceil(($size4Raw[$i+3] / (($average4)/12))*));
+            }
+            $data = array(
+                'size4MAF' => $size4MAF,
+                'size4ESF' => $size4ESF
+//                'size4SF' => $size4SF
+            );
+
+//            dd($request, $size4, $size5, $size4ESF);
+
+            $chart = new MyChart;
+            $chart->labels($dates);
+            $chart->dataset('Moving Average Forecast 3 Months', 'line', $data['size4MAF'])->options(['color' => '#3490dc']);
+            $chart->dataset('Exponential Smoothing Forecast', 'line', $data['size4ESF'])->options(['color' => '#6c757d']);
+//            $chart->dataset('Capital', 'line', $data['capitals'])->options(['color' => '#6c757d']);
+//            $chart->dataset('Income', 'line', $data['incomes'])->options(['color' => '#38c172']);
+
+            return view('pages.reports.result')
+                ->with('chart', $chart);
+//                ->with('transactions', Transaction::all())
+
     }
 
     public function index(Request $request) {
@@ -95,7 +125,7 @@ class ReportsController extends Controller
             'dates' => $dates,
             'incomes' => $incomes,
             'totals' => $totals,
-            'capitals' => $capitals,
+            'capitals' => $capitals
         );
     }
 

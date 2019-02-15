@@ -34,6 +34,8 @@
 
             <p>Date of Transaction: {{date('D M d,Y H:i', strtotime($transaction->created_at))}}</p>
             <span>Total: {{$transaction->total}}</span><br>
+            <span>Money Received: {{$transaction->money_received}}</span><br>
+            <span>Change: {{$transaction->change}}</span><br>
 
             @if(Auth::user()->type == 'admin')
                 <span>Capital: {{$transaction->capital}}</span><br>
