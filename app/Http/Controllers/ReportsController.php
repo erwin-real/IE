@@ -302,10 +302,11 @@ class ReportsController extends Controller
 
             $size5Chart = new MyChart;
             $size5Chart->labels($dates);
-            $size5Chart->dataset('Moving Average Forecast', 'line', $data['size4MAF'])->options(['color' => '#ffc107']);
-            $size5Chart->dataset('Exponential Smoothing Forecast', 'line', $data['size4ESF'])->options(['color' => '#6c757d']);
-            $size5Chart->dataset('Linear Regression Forecasting', 'line', $data['size4LRF'])->options(['color' => '#38c172']);
-            $size5Chart->dataset('Seasonality Forecasting', 'line', $data['size4SF'])->options(['color' => '#00f']);
+            $size5Chart->dataset('Moving Average Forecast', 'line', $data['size5MAF'])->options(['color' => '#ffc107']);
+            $size5Chart->dataset('Exponential Smoothing Forecast', 'line', $data['size5ESF'])->options(['color' => '#6c757d']);
+            $size5Chart->dataset('Linear Regression Forecasting', 'line', $data['size5LRF'])->options(['color' => '#38c172']);
+            $size5Chart->dataset('Seasonality Forecasting', 'line', $data['size5SF'])->options(['color' => '#00f']);
+
 
             return view('pages.reports.result')
                 ->with('size4Chart', $size4Chart)

@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Project's Title</title>
+    <title>Inventory Pilot</title>
 
     <!-- Scripts -->
      {{--<script src="{{ URL::asset('js/jquery.min.js') }}" defer></script>--}}
@@ -37,7 +37,7 @@
     <link href="{{ asset('css/vendor/fontawesome-free/css/all.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body">
 
     @include('includes.navbar')
 

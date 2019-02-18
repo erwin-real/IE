@@ -27,7 +27,7 @@
 
 <div style="margin-top: 30px;">
     <h4>Date: <b>{{date('D M d, Y', strtotime($transaction->created_at))}}</b></h4>
-    <h4 style="margin-bottom: 50px;">Time: <b>{{date('H:i', strtotime($transaction->created_at))}}</b></h4>
+    <h4 style="margin-bottom: 50px;">Time: <b>{{date('h:i A', strtotime($transaction->created_at))}}</b></h4>
     <div class="card-body mt-2" style="overflow-x: auto;">
         <table class="table table-hover table-responsive-lg">
             <tr>

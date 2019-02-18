@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-laravel d-xs-block d-sm-block d-md-block d-lg-none">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ url('/') }}">
-            Project's Title
+            Inventory Pilot
         </a>
          {{-- -> {{ Auth::user()->name }} --}}
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Project's Title</title>
+        <title>Inventory Pilot</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
@@ -89,12 +89,12 @@
             @endif
             <div class="content">
                 <div class="title">
-                    Project Title here ...
+                    Inventory Pilot
+                </div>
+                <div>
+                    <p>"Being prepared is an asset for a business."</p>
                 </div>
                 <div> @include('includes.messages') </div>
-                <div>
-                    <p>Project's Description here ...</p>
-                </div>
             </div>
         </div>
     </body>

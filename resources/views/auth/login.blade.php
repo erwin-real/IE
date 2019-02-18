@@ -7,7 +7,6 @@
             <div class="card">
                 <div class="card-header">
                     <span>{{ __('Login') }}</span>
-
                 </div>
 
                 <div class="card-body">

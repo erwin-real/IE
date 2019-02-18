@@ -53,7 +53,7 @@
                         @if(count($transactions) > 0)
                             @foreach($transactions as $transaction)
                                 <tr>
-                                    <td><a href="/transactions/{{$transaction->id}}">{{date('D M d,Y H:i', strtotime($transaction->created_at))}}</a></td>
+                                    <td><a href="/transactions/{{$transaction->id}}">{{date('D M d,Y h:i A', strtotime($transaction->created_at))}}</a></td>
                                     <td>{{$transaction->total}}</td>
                                     <td>{{$transaction->money_received}}</td>
                                     <td>{{$transaction->change}}</td>
