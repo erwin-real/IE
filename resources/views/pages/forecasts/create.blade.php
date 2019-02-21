@@ -5,7 +5,7 @@
     {{-- Right Content --}}
     <div class="body-right">
         <div class="container-fluid">
-            <h1>Forecast</h1>
+            <h1>Create</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     @if(Auth::user()->type == 'admin')
@@ -15,12 +15,15 @@
                         <li class="breadcrumb-item" aria-current="page">
                             <a href="/reports">Reports</a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Forecast</li>
+                        <li class="breadcrumb-item" aria-current="page">
+                            <a href="/forecasts">Forecasts</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">Create</li>
                     @endif
                 </ol>
             </nav>
 
-            {!! Form::open(['action' => 'ReportsController@calculate', 'method' => 'POST', 'class' => 'mt-4']) !!}
+            {!! Form::open(['action' => 'ForecastController@store', 'method' => 'POST', 'class' => 'mt-4']) !!}
 
                 <div class="lists-table table-responsive mt-3">
                     <table class="table table-hover table-striped py-3 text-center">
@@ -114,7 +117,7 @@
                                 {{Form::number('lead', '', ['class' => 'form-control', 'placeholder' => 'Enter Lead Time', 'required' => 'required'])}}
                             </div>
                             <div class="col-12 col-md-3">
-                                {{Form::label('days', 'Working Days')}}
+                                {{Form::label('days', 'Working Days per year')}}
                                 {{Form::number('days', '', ['class' => 'form-control', 'placeholder' => 'Enter Working Days', 'required' => 'required'])}}
                             </div>
                             <div class="col-12 col-md-3">
@@ -129,12 +132,15 @@
                     </div>
 
                     <div class="text-center mt-4">
-                        {{Form::submit('Calculate', ['class' => 'btn btn-outline-primary'])}}
+                        <button type="submit" class="btn btn-outline-primary">
+                            <i class="fa fa-check"></i> {{ __('Save') }}
+                        </button>
                     </div>
 
                 </div>
 
             {!! Form::close() !!}
+            <a href="/forecasts" class="btn btn-outline-primary m-3"><i class="fas fa-chevron-left"></i> Back to forecasts</a>
 
         </div>
     </div>

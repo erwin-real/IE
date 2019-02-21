@@ -19,7 +19,7 @@
             @include('includes.messages')
 
             <div class="button-holder text-right">
-                <a href="/guide/users" class="btn btn-outline-dark mt-1"><i class="fas fa-info-circle"></i> Guide</a>
+                <a href="/guide/users" target="_blank" class="btn btn-outline-dark mt-1"><i class="fas fa-info-circle"></i> Guide</a>
             </div>
 
             <div class="container-fluid mt-5">

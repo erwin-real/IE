@@ -65,7 +65,9 @@
 
                     <div class="text-center mt-4">
                         {{Form::hidden('_method', 'PUT')}}
-                        {{Form::submit('Save', ['class' => 'btn btn-outline-primary'])}}
+                        <button type="submit" class="btn btn-outline-primary">
+                            <i class="fa fa-check"></i> {{ __('Save') }}
+                        </button>
                     </div>
 
                 </div>

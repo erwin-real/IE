@@ -66,7 +66,9 @@
                     {{Form::file('cover_image', ['class' => 'form-control'])}}
 
                     <div class="text-center mt-4">
-                        {{Form::submit('Save', ['class' => 'btn btn-outline-primary'])}}
+                        <button type="submit" class="btn btn-outline-primary">
+                            <i class="fa fa-check"></i> {{ __('Save') }}
+                        </button>
                     </div>
 
                 </div>

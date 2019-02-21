@@ -28,7 +28,7 @@
 
             <div class="button-holder text-right">
                 <a href="/transactions/create" class="btn btn-outline-primary mt-1"><i class="fas fa-plus"></i> New Transaction</a>
-                <a href="/guide/transactions" class="btn btn-outline-dark mt-1"><i class="fas fa-info-circle"></i> Guide</a>
+                <a href="/guide/transactions" target="_blank" class="btn btn-outline-dark mt-1"><i class="fas fa-info-circle"></i> Guide</a>
             </div>
 
             {{$transactions->links()}}
@@ -44,7 +44,6 @@
                             @if(Auth::user()->type == 'admin')
                                 <th scope="col">Capital</th>
                                 <th scope="col">Income</th>
-                                {{--<th scope="col">Delete</th>--}}
                             @endif
 
                         </tr>
@@ -61,13 +60,6 @@
                                     @if(Auth::user()->type == 'admin')
                                         <td>{{$transaction->capital}}</td>
                                         <td>{{$transaction->income}}</td>
-
-                                        {{--<td class="icons">--}}
-                                            {{--{!!Form::open(['action' => ['TransactionsController@destroy', $transaction->id], 'method' => 'POST', 'class' => 'delete'])!!}--}}
-                                                {{--{{Form::hidden('_method', 'DELETE')}}--}}
-                                                {{--{!! Form::button('<i class="fa fa-trash"></i>', ['class'=>'del-btn', 'type'=>'submit']) !!}--}}
-                                            {{--{!!Form::close()!!}--}}
-                                        {{--</td>--}}
                                     @endif
 
                                 </tr>
@@ -83,13 +75,5 @@
 
         </div>
     </div>
-
-    <script>
-        $(document).ready(function() {
-            $(".delete").on("submit", function () {
-                return confirm("Are you sure you want to delete this transaction?");
-            });
-        });
-    </script>
 
 @endsection

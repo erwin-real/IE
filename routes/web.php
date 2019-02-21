@@ -15,8 +15,6 @@ Route::get('/', function () { return view('welcome'); });
 Route::get('/dashboard', 'DashboardController@index');
 
 Route::get('/reports', 'ReportsController@index');
-Route::get('/reports/forecast', 'ReportsController@forecast');
-Route::post('/reports/forecast', 'ReportsController@calculate');
 
 // Guides
 Route::get('/guide/products', 'GuideController@products');
@@ -64,6 +62,8 @@ Route::get('/transactions/success', 'TransactionsController@success');
 Route::get('/transactions/export/{id}', 'TransactionsController@export');
 
 Route::resource('products', 'ProductsController');
+
+Route::resource('forecasts', 'ForecastController');
 
 Route::resource('transactions', 'TransactionsController')->except([
     'edit', 'update'

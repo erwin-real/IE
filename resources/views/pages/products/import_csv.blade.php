@@ -51,7 +51,9 @@
                     </div>
 
                     <div class="text-left ml-3 mt-4">
-                        {{Form::submit('Submit', ['class' => 'btn btn-outline-success'])}}
+                        <button type="submit" class="btn btn-outline-success">
+                            <i class="fa fa-check"></i> {{ __('Submit') }}
+                        </button>
                     </div>
                 </div>
 

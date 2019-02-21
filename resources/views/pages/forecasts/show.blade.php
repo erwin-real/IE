@@ -5,7 +5,7 @@
     {{-- Right Content --}}
     <div class="body-right">
         <div class="container-fluid">
-            <h1>Result</h1>
+            <h1>Forecast Year {{$year}}</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     @if(Auth::user()->type == 'admin')
@@ -16,15 +16,29 @@
                             <a href="/reports">Reports</a>
                         </li>
                         <li class="breadcrumb-item" aria-current="page">
-                            <a href="/reports/forecast">Forecast</a>
+                            <a href="/forecasts">Forecast</a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Result</li>
+                        <li class="breadcrumb-item active" aria-current="page">Year {{$year}}</li>
                     @endif
                 </ol>
             </nav>
 
+            @include('includes.messages')
+
+            <div class="button-holder text-right">
+                <a href="/forecasts/{{$forecast->id}}/edit" class="btn btn-outline-primary mt-1"><i class="fas fa-pencil-alt"></i> Edit</a>
+
+                @if(Auth::user()->type == 'admin')
+                    <form id="delete" method="POST" action="{{ action('ForecastController@destroy', $forecast->id) }}" class="float-right mt-1 ml-1">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <button type="submit" class="btn btn-outline-danger"><i class="fas fa-trash"></i> Delete</button>
+                    </form>
+                @endif
+            </div>
+
             {{--SIZE 4--}}
-            <div class="bottom-dashboard">
+            <div class="bottom-dashboard mt-3">
                 <div class="row">
                     <div class="col-12">
                         <div class="card mb-2">
@@ -252,6 +266,9 @@
                     </div>
                 </div>
             </div>
+
+            <a href="/forecasts" class="btn btn-outline-primary m-3"><i class="fas fa-chevron-left"></i> Back to forecasts</a>
+
 
         </div>
     </div>

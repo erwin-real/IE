@@ -43,7 +43,7 @@
                 <div class="arrow d-none {{ request()->is('transactions') ? 'd-md-none d-lg-block d-xl-block' : '' }} {{ request()->is('transactions/*') ? 'd-md-none d-lg-block d-xl-block' : '' }} {{ request()->is('guide/transactions') ? 'd-md-none d-lg-block d-xl-block' : '' }}"></div>
             </li>
             @if(Auth::user()->type == 'admin')
-                <li class="list-group-item {{ (request()->is('reports') || request()->is('reports/*')) ? 'active' : '' }}">
+                <li class="list-group-item {{ (request()->is('forecasts') || request()->is('forecasts') || request()->is('forecasts/*') || request()->is('reports/*')) ? 'active' : '' }}">
                     <a href="/reports">
                         <div class="icon">
                             <i class="fas fa-chart-line"></i>
@@ -52,7 +52,7 @@
                             Reports
                         </div>
                     </a>
-                    <div class="arrow d-none {{ (request()->is('reports') || request()->is('reports/*')) ? 'd-md-none d-lg-block d-xl-block' : '' }}"></div>
+                    <div class="arrow d-none {{ (request()->is('forecasts') || request()->is('forecasts') || request()->is('forecasts/*') || request()->is('reports/*')) ? 'd-md-none d-lg-block d-xl-block' : '' }}"></div>
                 </li>
 
                 <li class="list-group-item {{ request()->is('users') ? 'active' : '' }} {{ request()->is('users/*') ? 'active' : '' }} {{ request()->is('guide/users') ? 'active' : '' }}">
