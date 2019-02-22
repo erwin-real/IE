@@ -6,6 +6,7 @@ use App\Charts\MyChart;
 use App\Forecast;
 use App\SingleForecast;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ForecastController extends Controller
@@ -29,7 +30,7 @@ class ForecastController extends Controller
      */
     public function create() {
         if ($this->isUserType('admin'))
-            return view('pages.forecasts.create');
+            return view('pages.forecasts.create')->with('forecasts', Forecast::all());
 
         return redirect('/')->with('error', 'You don\'t have the privilege');
     }
@@ -42,10 +43,9 @@ class ForecastController extends Controller
      */
     public function store(Request $request) {
         if ($this->isUserType('admin')) {
-
+            $year = $request->input('year');
             $size4Raw = $request->input('size4');
             $size5Raw = $request->input('size5');
-            $year = $request->input('year');
 
             $forecast = new Forecast;
             $forecast->year = $year;
@@ -102,9 +102,10 @@ class ForecastController extends Controller
      */
     public function show($id) {
         if ($this->isUserType('admin')) {
+
+            $forecast = Forecast::find($id);
             $size4Raw = array();
             $size5Raw = array();
-            $forecast = Forecast::find($id);
             $singleForecasts = $forecast->singleForecasts;
 
             for ($i = 0; $i < count($singleForecasts); $i++) {
@@ -150,7 +151,8 @@ class ForecastController extends Controller
             return view('pages.forecasts.edit')
                 ->with('forecast', $forecast)
                 ->with('size4Raw', $size4Raw)
-                ->with('size5Raw', $size5Raw);
+                ->with('size5Raw', $size5Raw)
+                ->with('forecasts', Forecast::all());
         }
 
         return redirect('/')->with('error', 'You don\'t have the privilege');
@@ -165,7 +167,6 @@ class ForecastController extends Controller
      */
     public function update(Request $request, $id) {
         if ($this->isUserType('admin')){
-
             $size4Raw = $request->input('size4');
             $size5Raw = $request->input('size5');
             $year = $request->input('year');
@@ -529,15 +530,8 @@ class ForecastController extends Controller
                 'final' => $final,
                 'year' => $year,
             );
-
-//            return view('pages.forecasts.show')
-//                ->with('size4Chart', $size4Chart)
-//                ->with('size5Chart', $size5Chart)
-//                ->with('final', $final)
-//                ->with('year', $year);
         }
     }
-
 
     public function isUserType($type) { return (User::find(auth()->user()->id)->type == $type) ? true : false; }
 }

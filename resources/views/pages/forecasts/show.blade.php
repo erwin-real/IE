@@ -280,4 +280,12 @@
     {!! $size5Chart->script() !!}
 
     <script src="/js/highcharts.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $("#delete").on("submit", function () {
+                return confirm("Are you sure you want to delete this transaction?");
+            });
+        });
+    </script>
 @endsection

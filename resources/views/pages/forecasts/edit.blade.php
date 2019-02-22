@@ -5,7 +5,7 @@
     {{-- Right Content --}}
     <div class="body-right">
         <div class="container-fluid">
-            <h1>Create</h1>
+            <h1>Edit</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     @if(Auth::user()->type == 'admin')
@@ -17,6 +17,9 @@
                         </li>
                         <li class="breadcrumb-item" aria-current="page">
                             <a href="/forecasts">Forecasts</a>
+                        </li>
+                        <li class="breadcrumb-item" aria-current="page">
+                            <a href="/forecasts/{{$forecast->id}}">Year {{$forecast->year + 3}}</a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">Edit From Year {{$forecast->year}}</li>
                     @endif
@@ -44,7 +47,7 @@
                                     <td class="p-0">1</td>
                                     <td class="m-auto p-0">
                                         <select id="year" name="year" required onchange="updateYear(this)">
-                                            <option value="2015"'.($forecast->year == 2016 ? 'selected' : '').'>2015</option>
+                                            <option value="2015"'.($forecast->year == 2015 ? 'selected' : '').'>2015</option>
                                             <option value="2016"'.($forecast->year == 2016 ? 'selected' : '').'>2016</option>
                                             <option value="2017"'.($forecast->year == 2017 ? 'selected' : '').'>2017</option>
                                             <option value="2018"'.($forecast->year == 2018 ? 'selected' : '').'>2018</option>
@@ -133,7 +136,7 @@
 
                     <div class="text-center mt-4">
                         {{Form::hidden('_method', 'PUT')}}
-                        <button type="submit" class="btn btn-outline-primary">
+                        <button id="submit" type="submit" class="btn btn-outline-primary">
                             <i class="fa fa-check"></i> {{ __('Save') }}
                         </button>
                     </div>
@@ -147,7 +150,24 @@
     </div>
 
     <script>
+        var years = [];
+
+        @foreach($forecasts as $item)
+            years.push('{{$item->year}}');
+        @endforeach
+
+        for (let i = 0; i < years.length; i++) {
+            if (years[i] === document.getElementById('year').value && ('{{$forecast->year}}' !== document.getElementById('year').value)) {
+                document.getElementById('submit').disabled = true;
+            }
+        }
+
         function updateYear(r) {
+            document.getElementById('submit').disabled = false;
+            for (let i = 0; i < years.length; i++) {
+                if (years[i] === r.value && ('{{$forecast->year}}' !== r.value)) document.getElementById('submit').disabled = true;
+            }
+
             let node = r.parentNode.parentNode.parentNode.children;
             for (let i = 1; i < 12; i++) node[i].children[1].innerText = r.value;
             for (let i = 12; i < 24; i++) node[i].children[1].innerText = parseInt(r.value) + 1;

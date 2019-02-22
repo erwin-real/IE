@@ -132,7 +132,7 @@
                     </div>
 
                     <div class="text-center mt-4">
-                        <button type="submit" class="btn btn-outline-primary">
+                        <button id="submit" type="submit" class="btn btn-outline-primary">
                             <i class="fa fa-check"></i> {{ __('Save') }}
                         </button>
                     </div>
@@ -146,7 +146,22 @@
     </div>
 
     <script>
+        var years = [];
+
+        @foreach($forecasts as $forecast)
+            years.push('{{$forecast->year}}');
+        @endforeach
+
+        for (let i = 0; i < years.length; i++) {
+            if (years[i] === document.getElementById('year').value) document.getElementById('submit').disabled = true;
+        }
+
         function updateYear(r) {
+            document.getElementById('submit').disabled = false;
+            for (let i = 0; i < years.length; i++) {
+                if (years[i] === r.value) document.getElementById('submit').disabled = true;
+            }
+
             let node = r.parentNode.parentNode.parentNode.children;
             for (let i = 1; i < 12; i++) node[i].children[1].innerText = r.value;
             for (let i = 12; i < 24; i++) node[i].children[1].innerText = parseInt(r.value) + 1;
