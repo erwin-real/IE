@@ -20,7 +20,7 @@
                     <div class="arrow d-none {{ request()->is('dashboard') ? 'd-md-none d-lg-block d-xl-block' : '' }}"></div>
                 </li>
             @endif
-            <li class="list-group-item {{ request()->is('products') ? 'active' : '' }} {{ request()->is('products/*') ? 'active' : '' }} {{ request()->is('guide/products') ? 'active' : '' }}">
+            <li class="list-group-item {{ request()->is('products') || request()->is('products/*') || request()->is('guide/products') ? 'active' : '' }}">
                 <a href="/products">
                     <div class="icon">
                         <i class="fas fa-shopping-bag"></i>
@@ -29,9 +29,9 @@
                         Products
                     </div>
                 </a>
-                <div class="arrow d-none {{ request()->is('products') ? 'd-md-none d-lg-block d-xl-block' : '' }} {{ request()->is('products/*') ? 'd-md-none d-lg-block d-xl-block' : '' }} {{ request()->is('guide/products') ? 'd-md-none d-lg-block d-xl-block' : '' }}"></div>
+                <div class="arrow d-none {{ request()->is('products') || request()->is('products/*') || request()->is('guide/products') ? 'd-md-none d-lg-block d-xl-block' : '' }}"></div>
             </li>
-            <li class="list-group-item {{ request()->is('transactions') ? 'active' : '' }} {{ request()->is('guide/transactions') ? 'active' : '' }} {{ request()->is('transactions/*') ? 'active' : '' }}">
+            <li class="list-group-item {{ request()->is('transactions') || request()->is('guide/transactions') || request()->is('transactions/*') ? 'active' : '' }}">
                 <a href="/transactions">
                     <div class="icon">
                         <i class="fas fa-tasks"></i>
@@ -40,7 +40,7 @@
                         Transactions
                     </div>
                 </a>
-                <div class="arrow d-none {{ request()->is('transactions') ? 'd-md-none d-lg-block d-xl-block' : '' }} {{ request()->is('transactions/*') ? 'd-md-none d-lg-block d-xl-block' : '' }} {{ request()->is('guide/transactions') ? 'd-md-none d-lg-block d-xl-block' : '' }}"></div>
+                <div class="arrow d-none {{ request()->is('transactions') || request()->is('guide/transactions') || request()->is('transactions/*') ? 'd-md-none d-lg-block d-xl-block' : '' }}"></div>
             </li>
             @if(Auth::user()->type == 'admin')
                 <li class="list-group-item {{ (request()->is('forecasts') || request()->is('forecasts') || request()->is('forecasts/*') || request()->is('reports/*')) ? 'active' : '' }}">
@@ -55,7 +55,7 @@
                     <div class="arrow d-none {{ (request()->is('forecasts') || request()->is('forecasts') || request()->is('forecasts/*') || request()->is('reports/*')) ? 'd-md-none d-lg-block d-xl-block' : '' }}"></div>
                 </li>
 
-                <li class="list-group-item {{ request()->is('users') ? 'active' : '' }} {{ request()->is('users/*') ? 'active' : '' }} {{ request()->is('guide/users') ? 'active' : '' }}">
+                <li class="list-group-item {{ request()->is('users') || request()->is('users/*') || request()->is('guide/users') ? 'active' : '' }}">
                     <a href="/users">
                         <div class="icon">
                             <i class="fas fa-users"></i>
@@ -64,7 +64,7 @@
                             Users
                         </div>
                     </a>
-                    <div class="arrow d-none {{ request()->is('users') ? 'd-md-none d-lg-block d-xl-block' : '' }} {{ request()->is('users/*') ? 'd-md-none d-lg-block d-xl-block' : '' }} {{ request()->is('guide/users') ? 'd-md-none d-lg-block d-xl-block' : '' }}"></div>
+                    <div class="arrow d-none {{ request()->is('users') || request()->is('users/*') || request()->is('guide/users') ? 'd-md-none d-lg-block d-xl-block' : '' }}"></div>
                 </li>
             @endif
             @guest
