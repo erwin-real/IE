@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ed27d165-b152-4c8e-aea3-1163681d8071" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/includes/sidenav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/includes/sidenav.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,15 +59,16 @@
     <session id="-1700947407">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="22" />
-          <entry key="project.open.time.1" value="5" />
+          <entry key="project.closed" value="27" />
+          <entry key="project.open.time.1" value="6" />
           <entry key="project.open.time.10" value="3" />
           <entry key="project.open.time.11" value="3" />
           <entry key="project.open.time.12" value="2" />
           <entry key="project.open.time.15" value="3" />
-          <entry key="project.open.time.2" value="3" />
+          <entry key="project.open.time.2" value="4" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="20" />
+          <entry key="project.open.time.8" value="2" />
+          <entry key="project.opened" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -76,13 +76,13 @@
           <entry key="env" value="2" />
           <entry key="gitattributes" value="1" />
           <entry key="gitignore" value="1" />
-          <entry key="php" value="114" />
+          <entry key="php" value="116" />
           <entry key="scss" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Blade" value="66" />
+          <entry key="Blade" value="68" />
           <entry key="PHP" value="48" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="SCSS" value="1" />
@@ -92,12 +92,12 @@
         <counts>
           <entry key="env" value="5" />
           <entry key="gitignore" value="6" />
-          <entry key="php" value="1617" />
+          <entry key="php" value="1618" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="647" />
+          <entry key="Blade" value="648" />
           <entry key="PHP" value="970" />
           <entry key="PLAIN_TEXT" value="11" />
         </counts>
@@ -106,20 +106,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/pages/guides/users.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="93" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/includes/sidenav.blade.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/pages/forecasts/edit.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="66" column="174" selection-start-line="66" selection-start-column="174" selection-end-line="66" selection-end-column="174" />
+            <state relative-caret-position="459">
+              <caret line="157" selection-start-line="157" selection-end-line="157" />
             </state>
           </provider>
         </entry>
@@ -348,7 +339,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -373,6 +363,17 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Http" type="462c0819:PsiDirectoryNode" />
               <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IE" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IE" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="IE" type="b2602c69:ProjectViewProjectNode" />
@@ -451,12 +452,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/programs/IE/resources/views/pages/forecasts/create.blade.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Alfren" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -519,12 +521,16 @@
       <workItem from="1550658510901" duration="50000" />
       <workItem from="1550741294431" duration="285000" />
       <workItem from="1550756730981" duration="5094000" />
-      <workItem from="1550803015094" duration="2175000" />
+      <workItem from="1550803015094" duration="3123000" />
+      <workItem from="1550843654794" duration="2268000" />
+      <workItem from="1550917011526" duration="69000" />
+      <workItem from="1551021419312" duration="256000" />
+      <workItem from="1551057188252" duration="135000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114263000" />
+    <option name="totallyTimeSpent" value="117939000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -537,9 +543,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22707888" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23720682" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -866,13 +871,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/forecasts/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="93" selection-start-line="21" selection-start-column="93" selection-end-line="21" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/guides/users.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -882,8 +880,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/includes/sidenav.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="66" column="174" selection-start-line="66" selection-start-column="174" selection-end-line="66" selection-end-column="174" />
+        <state relative-caret-position="-99">
+          <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/forecasts/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="157" selection-start-line="157" selection-end-line="157" />
         </state>
       </provider>
     </entry>
