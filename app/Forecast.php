@@ -17,5 +17,7 @@ class Forecast extends Model
 
     public function singleForecasts() { return $this->hasMany('App\SingleForecast'); }
 
-    public function actualSales() { return $this->hasMany('App\ActualSaleForecast'); }
+    public function actualSales() { return $this->hasMany('App\ActualSale'); }
+
+    public function seasons() { return $this->hasMany('App\Season'); }
 }

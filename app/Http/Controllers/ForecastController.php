@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Charts\MyChart;
 use App\Forecast;
+use App\Season;
 use App\SingleForecast;
 use App\User;
 use Carbon\Carbon;
@@ -80,6 +81,8 @@ class ForecastController extends Controller
                 $request->input('holding'), $request->input('days'),
                 $request->input('lead'), ($year + 3)
             );
+
+            $this->saveSeasons($forecast, $year, $data['size4SF'], $data['size5SF']);
 
             return view('pages.forecasts.show')
                 ->with('size4Chart', $data['size4Chart'])
@@ -210,6 +213,8 @@ class ForecastController extends Controller
                 $request->input('lead'), ($year + 3)
             );
 
+            $this->saveSeasons($forecast, $year, $data['size4SF'], $data['size5SF']);
+
             return view('pages.forecasts.show')
                 ->with('size4Chart', $data['size4Chart'])
                 ->with('size5Chart', $data['size5Chart'])
@@ -218,7 +223,6 @@ class ForecastController extends Controller
                 ->with('forecast', $forecast)
                 ->with('success', 'Forecast Updated Successfully!');
         }
-
 
         return redirect('/')->with('error', 'You don\'t have the privilege');
     }
@@ -238,13 +242,17 @@ class ForecastController extends Controller
                 $singleForecast->delete();
             }
 
+            foreach ($forecast->seasons as $item) {
+                $item = Season::find($item->id);
+                $item->delete();
+            }
+
             $forecast->delete();
             return redirect('/forecasts')->with('success', 'Deleted forecast successfully!');
         }
 
         return redirect('/')->with('error', 'You don\'t have the privilege');
     }
-
 
     public function calculate($size4Raw, $size5Raw, $ordering, $holding, $days, $lead, $year) {
         if ($this->isUserType('admin')) {
@@ -529,7 +537,34 @@ class ForecastController extends Controller
                 'size5Chart' => $size5Chart,
                 'final' => $final,
                 'year' => $year,
+                'size4SF' => $size4SF,
+                'size5SF' => $size5SF,
             );
+        }
+    }
+
+    public function saveSeasons($forecast, $year, $size4SF, $size5SF) {
+        foreach ($forecast->seasons as $item) {
+            $item = Season::find($item->id);
+            $item->delete();
+        }
+
+        for ($i = 0; $i < 12; $i++) {
+            $season = new Season;
+            $season->year = $year + 3;
+            $season->forecast_id = $forecast->id;
+            $season->month = $i+1;
+            $season->size = 4;
+            $season->value = $size4SF[$i];
+            $season->save();
+
+            $season = new Season;
+            $season->year = $year + 3;
+            $season->forecast_id = $forecast->id;
+            $season->month = $i+1;
+            $season->size = 5;
+            $season->value = $size5SF[$i];
+            $season->save();
         }
     }
 

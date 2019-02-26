@@ -6,7 +6,7 @@
     {{-- Right Content --}}
     <div class="body-right">
         <div class="container-fluid">
-            <h1>Transactions</h1>
+            <h1>Actual Sales Year {{$forecast->year + 3}}</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item" aria-current="page">
@@ -34,7 +34,7 @@
             @endif
 
             <div class="button-holder text-right">
-                @if ($forecast->actualSales != null)
+                @if ($forecast->actualSales != null && count($forecast->actualSales) > 0)
                     <a href="/forecasts/sales/{{$forecast->id}}/edit" class="btn btn-outline-primary mt-1"><i class="fas fa-plus"></i> Update Actual Sales</a>
                 @else
                     <a href="/forecasts/sales/{{$forecast->id}}/create" class="btn btn-outline-primary mt-1"><i class="fas fa-plus"></i> Add Actual Sales</a>
@@ -50,24 +50,32 @@
                             <div class="lists-table table-responsive mt-3">
                                 <table class="table table-hover table-striped py-3 text-center">
                                     <thead>
-                                    <tr>
-                                        <th scope="col">Year</th>
-                                        <th scope="col">Month</th>
-                                        <th scope="col">Seasonality </th>
-                                        <th scope="col">Order Cycle (days)</th>
-                                        <th scope="col">Reorder Point</th>
-                                        <th scope="col">Safety Stock</th>
-                                    </tr>
+                                        <tr>
+                                            <th scope="col">Year</th>
+                                            <th scope="col">Month</th>
+                                            <th scope="col">Seasonality Forecast</th>
+                                            <th scope="col">Actual Sales</th>
+                                            <th scope="col">Ending Inventory</th>
+                                            <th scope="col">To Be Produced</th>
+                                        </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td>{{$year}}</td>
-                                        <td>{{$final['MAF4']}}</td>
-                                        <td>{{$final['MAFNOY4']}}</td>
-                                        <td>{{$final['MAFOC4']}}</td>
-                                        <td>{{$final['MAFRP4']}}</td>
-                                        <td>{{$final['MAFSS4']}}</td>
-                                    </tr>
+                                        @if ($forecast->actualSales != null && count($forecast->actualSales) > 0)
+                                            @php
+                                                $months = ['January', 'February', 'March', 'April', 'May', 'June',
+                                                 'July', 'August', 'September', 'October', 'November', 'December'];
+                                                 for ($i = 0; $i < 12; $i++) {
+                                                 echo '<tr>';
+                                                    echo '<td>'.($forecast->year + 3).'</td>';
+                                                    echo '<td>'. $months[$i] .'</td>';
+                                                 echo '</tr>';
+                                                 }
+                                            @endphp
+                                        @else
+                                            <tr class="text-center">
+                                                <th colspan="6">No actual sales recorded</th>
+                                            </tr>
+                                        @endif
                                     </tbody>
                                 </table>
                             </div>
@@ -75,47 +83,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="lists-table table-responsive mt-3">
-                <table class="table table-hover table-striped py-3 text-center">
-                    <thead>
-                        <tr>
-                            <th scope="col">Year</th>
-                            <th scope="col">Month</th>
-                            <th scope="col">Seasonality Forecast Size 4</th>
-                            <th scope="col">Change</th>
-
-                            @if(Auth::user()->type == 'admin')
-                                <th scope="col">Capital</th>
-                                <th scope="col">Income</th>
-                            @endif
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @if(count($transactions) > 0)
-                            @foreach($transactions as $transaction)
-                                <tr>
-                                    <td><a href="/transactions/{{$transaction->id}}">{{date('D M d,Y h:i A', strtotime($transaction->created_at))}}</a></td>
-                                    <td>{{$transaction->total}}</td>
-                                    <td>{{$transaction->money_received}}</td>
-                                    <td>{{$transaction->change}}</td>
-
-                                    @if(Auth::user()->type == 'admin')
-                                        <td>{{$transaction->capital}}</td>
-                                        <td>{{$transaction->income}}</td>
-                                    @endif
-
-                                </tr>
-                            @endforeach
-                        @else
-                        <tr class="text-center">
-                            <th colspan="7">No transactions found</th>
-                        </tr>
-                        @endif
-                    </tbody>
-                </table>
             </div>
 
         </div>

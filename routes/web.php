@@ -24,6 +24,11 @@ Route::get('/reports', 'ReportsController@index');
 
 // Actual Sales
 Route::get('/forecasts/sales/{id}', 'ActualSalesController@show');
+Route::get('/forecasts/sales/{id}/create', 'ActualSalesController@create');
+Route::get('/forecasts/sales/{id}/edit', 'ActualSalesController@edit');
+Route::post('/forecasts/sales/{id}', 'ActualSalesController@store');
+Route::put('/forecasts/sales/{id}', 'ActualSalesController@update');
+Route::delete('/forecasts/sales/{id}', 'ActualSalesController@destroy');
 
 //Auth::routes();
 

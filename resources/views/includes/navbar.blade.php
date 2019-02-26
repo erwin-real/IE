@@ -30,10 +30,10 @@
 
                     @if(Auth::user()->type == 'admin')
                         <li class="nav-tem"><a class="nav-link" href="/reports">Reports</a></li>
+                        <li class="nav-tem"><a class="nav-link" href="/forecasts">Forecasts</a></li>
                         <li class="nav-tem"><a class="nav-link" href="/users">Users</a></li>
                     @endif
 
-                    <li class="nav-tem"><a class="nav-link" href="#">{{ Auth::user()->name }}</a></li>
                     <li class="nav-item">
                             <a class="nav-link" href="{{ route('logout') }}"
                                onclick="event.preventDefault();

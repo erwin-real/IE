@@ -62,7 +62,6 @@
                 <a href="/reports?type=weekly" class="btn btn-outline-primary">Weekly</a>
                 <a href="/reports?type=monthly" class="btn btn-outline-primary">Monthly</a>
                 <a href="/reports?type=yearly" class="btn btn-outline-primary">Yearly</a>
-                <a href="/forecasts" class="btn btn-outline-primary"><i class="fa fa-calendar-alt"></i> Forecasts</a>
             </div>
 
             <div class="bottom-dashboard">

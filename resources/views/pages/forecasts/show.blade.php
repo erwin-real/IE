@@ -27,7 +27,7 @@
 
             <div class="button-holder text-right">
                 <a href="/forecasts/{{$forecast->id}}/edit" class="btn btn-outline-primary mt-1"><i class="fas fa-pencil-alt"></i> Edit</a>
-                <a href="/sales/{{$forecast->id}}/" class="btn btn-outline-primary mt-1"><i class="fas fa-eye"></i> Show Actual Sales</a>
+                <a href="/forecasts/sales/{{$forecast->id}}/" class="btn btn-outline-primary mt-1"><i class="fas fa-eye"></i> Show Actual Sales</a>
 
                 @if(Auth::user()->type == 'admin')
                     <form id="delete" method="POST" action="{{ action('ForecastController@destroy', $forecast->id) }}" class="float-right mt-1 ml-1">

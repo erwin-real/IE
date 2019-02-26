@@ -17,15 +17,23 @@ class ActualSalesController extends Controller
     }
 
     public function create($id) {
-        if ($this->isUserType('admin'))
-            return view('pages.forecasts.create')->with('forecasts', Forecast::find($id));
+        if ($this->isUserType('admin')) {
+            $forecast = Forecast::find($id);
+            return view('pages.sales.create')
+                ->with('forecast', $forecast)
+                ->with('seasons', $forecast->seasons);
+        }
 
         return redirect('/')->with('error', 'You don\'t have the privilege');
     }
 
+    public function store(Request $request) {
+        dd($request);
+    }
+
     public function edit($id) {
         if ($this->isUserType('admin'))
-            return view('pages.forecasts.edit')->with('forecasts', Forecast::find($id));
+            return view('pages.sales.edit')->with('forecasts', Forecast::find($id));
 
         return redirect('/')->with('error', 'You don\'t have the privilege');
     }
