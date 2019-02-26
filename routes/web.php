@@ -14,12 +14,16 @@
 Route::get('/', function () { return view('welcome'); });
 Route::get('/dashboard', 'DashboardController@index');
 
-Route::get('/reports', 'ReportsController@index');
-
 // Guides
 Route::get('/guide/products', 'GuideController@products');
 Route::get('/guide/transactions', 'GuideController@transactions');
 Route::get('/guide/users', 'GuideController@users');
+
+// Reports
+Route::get('/reports', 'ReportsController@index');
+
+// Actual Sales
+Route::get('/forecasts/sales/{id}', 'ActualSalesController@show');
 
 //Auth::routes();
 

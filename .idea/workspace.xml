@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ed27d165-b152-4c8e-aea3-1163681d8071" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/forecasts/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/forecasts/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Forecast.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Forecast.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ActualSaleController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,8 +62,8 @@
     <session id="-1700947407">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="27" />
-          <entry key="project.open.time.1" value="6" />
+          <entry key="project.closed" value="30" />
+          <entry key="project.open.time.1" value="7" />
           <entry key="project.open.time.10" value="3" />
           <entry key="project.open.time.11" value="3" />
           <entry key="project.open.time.12" value="2" />
@@ -69,7 +71,8 @@
           <entry key="project.open.time.2" value="4" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.8" value="2" />
-          <entry key="project.opened" value="24" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -77,14 +80,14 @@
           <entry key="env" value="2" />
           <entry key="gitattributes" value="1" />
           <entry key="gitignore" value="1" />
-          <entry key="php" value="116" />
+          <entry key="php" value="130" />
           <entry key="scss" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Blade" value="68" />
-          <entry key="PHP" value="48" />
+          <entry key="Blade" value="73" />
+          <entry key="PHP" value="57" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="SCSS" value="1" />
         </counts>
@@ -93,13 +96,13 @@
         <counts>
           <entry key="env" value="5" />
           <entry key="gitignore" value="6" />
-          <entry key="php" value="1618" />
+          <entry key="php" value="1988" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="648" />
-          <entry key="PHP" value="970" />
+          <entry key="Blade" value="881" />
+          <entry key="PHP" value="1107" />
           <entry key="PLAIN_TEXT" value="11" />
         </counts>
       </usages-collector>
@@ -108,10 +111,49 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_25_163510_create_actual_sales_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="25" column="33" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ActualSalesController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="27" column="85" selection-start-line="27" selection-start-column="85" selection-end-line="27" selection-end-column="85" />
+              <folding>
+                <element signature="e#40#57#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ForecastController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="499" column="40" lean-forward="true" selection-start-line="499" selection-start-column="40" selection-end-line="499" selection-end-column="40" />
+            <state relative-caret-position="510">
+              <caret line="125" column="36" selection-start-line="125" selection-start-column="31" selection-end-line="125" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/pages/sales/show.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="55" column="63" selection-start-line="55" selection-start-column="63" selection-end-line="55" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -119,17 +161,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/pages/forecasts/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="133" selection-start-line="29" selection-start-column="133" selection-end-line="29" selection-end-column="133" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ActualSaleController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="26" column="10" lean-forward="true" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+            <state relative-caret-position="408">
+              <caret line="153" column="18" lean-forward="true" selection-start-line="41" selection-start-column="12" selection-end-line="153" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -172,6 +205,7 @@
       <find>bot-logout</find>
       <find>disable</find>
       <find>/guide/</find>
+      <find>actu</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -201,7 +235,6 @@
         <option value="$PROJECT_DIR$/resources/views/pages/products/show.blade.php" />
         <option value="$PROJECT_DIR$/storage/framework/views/f5ca7085aa836a9788ce245093f6dd7a9151ba5b.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/GuideController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/transactions/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/reports/test.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/users/show.blade.php" />
@@ -213,7 +246,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/ReportsController.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/transactions/single.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/includes/navbar.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
@@ -227,6 +259,11 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_02_25_163510_create_actual_sales_table.php" />
         <option value="$PROJECT_DIR$/app/ActualSale.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/forecasts/show.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/app/Forecast.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ActualSalesController.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/sales/show.blade.php" />
       </list>
     </option>
   </component>
@@ -352,10 +389,9 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1928" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1066" />
+    <option name="x" value="953" />
+    <option name="width" value="974" />
+    <option name="height" value="1057" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -387,11 +423,6 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Http" type="462c0819:PsiDirectoryNode" />
               <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IE" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="IE" type="b2602c69:ProjectViewProjectNode" />
@@ -446,15 +477,7 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="guides" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IE" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="transactions" type="462c0819:PsiDirectoryNode" />
+              <item name="sales" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="IE" type="b2602c69:ProjectViewProjectNode" />
@@ -475,23 +498,23 @@
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/programs/IE/resources/views/pages/forecasts/create.blade.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FoodAvenue" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Erwin\Documents\test\IE\resources\views\pages" />
+      <recent name="D:\programs\IE\resources\views\pages\reports" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\programs\IE\resources\views\pages\sales" />
       <recent name="D:\programs\IE\resources\views\pages\reports" />
       <recent name="E:\Erwin\Documents\test\IE\public\css" />
       <recent name="E:\Erwin\Documents\test\IE\public\js" />
       <recent name="E:\Erwin\Documents\test\IE\resources\views\pages" />
-      <recent name="E:\Erwin\Documents\test\IE" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Erwin\Documents\test\IE\resources\views\pages" />
-      <recent name="D:\programs\IE\resources\views\pages\reports" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -545,11 +568,13 @@
       <workItem from="1551021419312" duration="256000" />
       <workItem from="1551057188252" duration="135000" />
       <workItem from="1551057594672" duration="4770000" />
+      <workItem from="1551089320204" duration="220000" />
+      <workItem from="1551105914317" duration="2715000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122709000" />
+    <option name="totallyTimeSpent" value="125646000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -561,10 +586,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18070363" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24786781" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -615,18 +639,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/storage/framework/views/f5ca7085aa836a9788ce245093f6dd7a9151ba5b.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/guides/loss.blade.php" />
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/GuideController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="22" column="69" selection-start-line="22" selection-start-column="69" selection-end-line="22" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/includes/messages.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/template.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -666,13 +678,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="4" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProductsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="69" selection-start-line="68" selection-end-line="69" />
         </state>
       </provider>
     </entry>
@@ -795,13 +800,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-170">
-          <caret line="13" column="56" selection-start-line="13" selection-start-column="56" selection-end-line="13" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="850">
@@ -844,13 +842,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/forecasts/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="150" column="8" selection-start-line="150" selection-start-column="8" selection-end-line="150" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/transactions/single.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -872,13 +863,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/forecasts/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="154" column="37" selection-start-line="154" selection-start-column="37" selection-end-line="154" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_21_133604_create_forecasts_table.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -889,13 +873,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_25_162710_create_actual_sizes_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_25_162710_create_actual_sizes_table.php" />
     <entry file="file://$PROJECT_DIR$/app/SingleForecast.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -903,17 +881,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_25_163510_create_actual_sales_table.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProductsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+        <state relative-caret-position="510">
+          <caret line="317" column="49" selection-start-line="317" selection-start-column="49" selection-end-line="317" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/forecasts/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="144" selection-start-line="144" selection-end-line="144" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ActualSaleController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="26" column="10" lean-forward="true" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/GuideController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="22" column="69" selection-start-line="22" selection-start-column="69" selection-end-line="22" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/forecasts/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="150" column="8" selection-start-line="150" selection-start-column="8" selection-end-line="150" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ForecastController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="499" column="40" lean-forward="true" selection-start-line="499" selection-start-column="40" selection-end-line="499" selection-end-column="40" />
+        <state relative-caret-position="510">
+          <caret line="125" column="36" selection-start-line="125" selection-start-column="31" selection-end-line="125" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="25" column="33" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -924,17 +937,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/forecasts/show.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Forecast.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="133" selection-start-line="29" selection-start-column="133" selection-end-line="29" selection-end-column="133" />
+        <state relative-caret-position="323">
+          <caret line="19" column="31" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ActualSaleController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ActualSalesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="26" column="10" lean-forward="true" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+        <state relative-caret-position="459">
+          <caret line="27" column="85" selection-start-line="27" selection-start-column="85" selection-end-line="27" selection-end-column="85" />
+          <folding>
+            <element signature="e#40#57#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/forecasts/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="153" column="18" lean-forward="true" selection-start-line="41" selection-start-column="12" selection-end-line="153" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_25_163510_create_actual_sales_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/sales/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="55" column="63" selection-start-line="55" selection-start-column="63" selection-end-line="55" selection-end-column="63" />
         </state>
       </provider>
     </entry>

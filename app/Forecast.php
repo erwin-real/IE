@@ -16,4 +16,6 @@ class Forecast extends Model
     public $timestamps = true;
 
     public function singleForecasts() { return $this->hasMany('App\SingleForecast'); }
+
+    public function actualSales() { return $this->hasMany('App\ActualSaleForecast'); }
 }
