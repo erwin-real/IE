@@ -23,6 +23,7 @@
 
             <div class="button-holder text-right">
                 <a href="/forecasts/create" class="btn btn-outline-primary mt-1"><i class="fas fa-plus"></i> Create</a>
+                <a href="/guide/forecasts" target="_blank" class="btn btn-outline-dark mt-1"><i class="fas fa-info-circle"></i> Guide</a>
             </div>
 
             <div class="lists-table table-responsive mt-3">

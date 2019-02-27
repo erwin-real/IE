@@ -24,7 +24,7 @@
                     <li class="breadcrumb-item" aria-current="page">
                         <a href="/forecasts/sales/{{$forecast->id}}">Actual Sales</a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">Create</li>
+                    <li class="breadcrumb-item active" aria-current="page">Update</li>
                 </ol>
             </nav>
 
@@ -36,7 +36,7 @@
                 </div>
             @endif
 
-            {!! Form::open(['action' => ['ActualSalesController@store', $forecast->id], 'method' => 'POST', 'class' => 'mt-4']) !!}
+            {!! Form::open(['action' => ['ActualSalesController@update', $forecast->id], 'method' => 'POST', 'class' => 'mt-4']) !!}
             <input type="hidden" value="{{$forecast->year + 3}}" name="year">
 
                 {{--SIZE 4--}}
@@ -59,21 +59,22 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @php
-                                            $months = ['January', 'February', 'March', 'April', 'May', 'June',
-                                             'July', 'August', 'September', 'October', 'November', 'December'];
-                                             for ($i = 0; $i < 12; $i++) {
-                                                 echo '<tr>';
-                                                    echo '<td class="m-auto p-0">'. ($forecast->year + 3) .'</td>';
-                                                    echo '<td class="m-auto p-0">'. $months[$i] .'</td>';
-                                                    echo '<td class="m-auto p-0">'. $seasons[$i + $i]->value .'</td>';
-                                                    echo '<td class="m-auto p-0"><input name="size4[]" type="number"
-                                                     onkeypress="update(this)" onkeyup="update(this)" required/></td>';
-                                                    echo '<td class="m-auto p-0"></td>';
-                                                    echo '<td class="m-auto p-0"></td>';
-                                                 echo '</tr>';
-                                             }
-                                        @endphp
+                                            @php
+                                                $months = ['January', 'February', 'March', 'April', 'May', 'June',
+                                                 'July', 'August', 'September', 'October', 'November', 'December'];
+                                                 for ($i = 0; $i < 12; $i++) {
+                                                     echo '<tr>';
+                                                        echo '<td class="m-auto p-0">'. ($forecast->year + 3) .'</td>';
+                                                        echo '<td class="m-auto p-0">'. $months[$i] .'</td>';
+                                                        echo '<td class="m-auto p-0">'. $forecast->seasons[$i + $i]->value .'</td>';
+                                                        echo '<td class="m-auto p-0"><input name="size4[]" type="number"
+                                                         onkeypress="update(this)" onkeyup="update(this)" value="'.$forecast->actualSales[$i + $i]->sale.'" required/></td>';
+                                                        echo '<td class="m-auto p-0">'. ($forecast->seasons[$i + $i]->value - $forecast->actualSales[$i + $i]->sale) .'</td>';
+                                                        if ($i == 0) echo '<td class="m-auto p-0"></td>';
+                                                        else echo '<td class="m-auto p-0">'. ($forecast->seasons[$i+$i]->value - (($forecast->seasons[$i+$i-2]->value - $forecast->actualSales[$i+$i-2]->sale))) .'</td>';
+                                                     echo '</tr>';
+                                                 }
+                                            @endphp
                                         </tbody>
                                     </table>
                                 </div>
@@ -103,21 +104,22 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @php
-                                            $months = ['January', 'February', 'March', 'April', 'May', 'June',
-                                             'July', 'August', 'September', 'October', 'November', 'December'];
-                                             for ($i = 0; $i < 12; $i++) {
-                                                 echo '<tr>';
-                                                    echo '<td class="m-auto p-0">'. ($forecast->year + 3) .'</td>';
-                                                    echo '<td class="m-auto p-0">'. $months[$i] .'</td>';
-                                                    echo '<td class="m-auto p-0">'. $seasons[$i+$i+1]->value .'</td>';
-                                                    echo '<td class="m-auto p-0"><input name="size5[]" type="number"
-                                                         onkeypress="update(this)" onkeyup="update(this)" required/></td>';
-                                                    echo '<td class="m-auto p-0"></td>';
-                                                    echo '<td class="m-auto p-0"></td>';
-                                                 echo '</tr>';
-                                             }
-                                        @endphp
+                                            @php
+                                                $months = ['January', 'February', 'March', 'April', 'May', 'June',
+                                                 'July', 'August', 'September', 'October', 'November', 'December'];
+                                                 for ($i = 0; $i < 12; $i++) {
+                                                     echo '<tr>';
+                                                        echo '<td class="m-auto p-0">'. ($forecast->year + 3) .'</td>';
+                                                        echo '<td class="m-auto p-0">'. $months[$i] .'</td>';
+                                                        echo '<td class="m-auto p-0">'. $forecast->seasons[$i + $i + 1]->value .'</td>';
+                                                        echo '<td class="m-auto p-0"><input name="size5[]" type="number"
+                                                         onkeypress="update(this)" onkeyup="update(this)" value="'.$forecast->actualSales[$i + $i + 1]->sale.'" required/></td>';
+                                                        echo '<td class="m-auto p-0">'. ($forecast->seasons[$i + $i + 1]->value - $forecast->actualSales[$i + $i + 1]->sale) .'</td>';
+                                                        if ($i == 0) echo '<td class="m-auto p-0"></td>';
+                                                        else echo '<td class="m-auto p-0">'. ($forecast->seasons[$i+$i+1]->value - (($forecast->seasons[$i+$i-2+1]->value - $forecast->actualSales[$i+$i-2+1]->sale))) .'</td>';
+                                                     echo '</tr>';
+                                                 }
+                                            @endphp
                                         </tbody>
                                     </table>
                                 </div>
@@ -128,6 +130,7 @@
                 </div>
 
                 <div class="text-center mt-4">
+                    {{Form::hidden('_method', 'PUT')}}
                     <button id="submit" type="submit" class="btn btn-outline-primary">
                         <i class="fa fa-check"></i> {{ __('Save') }}
                     </button>

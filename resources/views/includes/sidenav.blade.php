@@ -55,7 +55,7 @@
                     <div class="arrow d-none {{ request()->is('reports') || request()->is('reports/*') ? 'd-md-none d-lg-block d-xl-block' : '' }}"></div>
                 </li>
 
-                <li class="list-group-item {{ request()->is('forecasts') || request()->is('forecasts/*') ? 'active' : '' }}">
+                <li class="list-group-item {{ request()->is('forecasts') || request()->is('forecasts/*') || request()->is('guide/forecasts') ? 'active' : '' }}">
                     <a href="/forecasts">
                         <div class="icon">
                             <i class="fas fa-calendar-alt"></i>
@@ -64,7 +64,7 @@
                             Forecasts
                         </div>
                     </a>
-                    <div class="arrow d-none {{ request()->is('forecasts') || request()->is('forecasts/*') ? 'd-md-none d-lg-block d-xl-block' : '' }}"></div>
+                    <div class="arrow d-none {{ request()->is('forecasts') || request()->is('forecasts/*') || request()->is('guide/forecasts') ? 'd-md-none d-lg-block d-xl-block' : '' }}"></div>
                 </li>
 
                 <li class="list-group-item {{ request()->is('users') || request()->is('users/*') || request()->is('guide/users') ? 'active' : '' }}">

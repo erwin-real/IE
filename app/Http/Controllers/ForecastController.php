@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ActualSale;
 use App\Charts\MyChart;
 use App\Forecast;
 use App\Season;
@@ -244,6 +245,11 @@ class ForecastController extends Controller
 
             foreach ($forecast->seasons as $item) {
                 $item = Season::find($item->id);
+                $item->delete();
+            }
+
+            foreach ($forecast->actualSales as $item) {
+                $item = ActualSale::find($item->id);
                 $item->delete();
             }
 

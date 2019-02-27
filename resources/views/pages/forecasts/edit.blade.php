@@ -5,7 +5,7 @@
     {{-- Right Content --}}
     <div class="body-right">
         <div class="container-fluid">
-            <h1>Edit</h1>
+            <h1>Edit Forecast Year {{$forecast->year}}</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     @if(Auth::user()->type == 'admin')
@@ -21,7 +21,7 @@
                         <li class="breadcrumb-item" aria-current="page">
                             <a href="/forecasts/{{$forecast->id}}">Year {{$forecast->year + 3}}</a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Edit From Year {{$forecast->year}}</li>
+                        <li class="breadcrumb-item active" aria-current="page">Edit</li>
                     @endif
                 </ol>
             </nav>

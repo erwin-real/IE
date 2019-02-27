@@ -18,6 +18,7 @@ Route::get('/dashboard', 'DashboardController@index');
 Route::get('/guide/products', 'GuideController@products');
 Route::get('/guide/transactions', 'GuideController@transactions');
 Route::get('/guide/users', 'GuideController@users');
+Route::get('/guide/forecasts', 'GuideController@forecasts');
 
 // Reports
 Route::get('/reports', 'ReportsController@index');

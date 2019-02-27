@@ -34,8 +34,13 @@ class GuideController extends Controller
     }
 
     public function users() {
-        if ($this->isUserType('admin'))
-            return view('pages.guides.users');
+        if ($this->isUserType('admin')) return view('pages.guides.users');
+
+        return redirect('/')->with('error', 'You don\'t have the privilege');
+    }
+
+    public function forecasts() {
+        if ($this->isUserType('admin')) return view('pages.guides.forecasts');
 
         return redirect('/')->with('error', 'You don\'t have the privilege');
     }
